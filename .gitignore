@@ -1,1 +1,3 @@
 */node_modules/*
+/jsDeepDive/00-ProbandoTests/spec/support
+/.vs
