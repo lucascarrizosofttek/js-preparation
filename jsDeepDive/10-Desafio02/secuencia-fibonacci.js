@@ -1,14 +1,14 @@
-var calcularFibonacci = (a,b, endNumber) => {
+var calcularFibonacci = (secuencia, endNumber) => {
 
-    var secuencia = [Math.min(a, b), Math.max(a, b)];
+    var aLast = secuencia[secuencia.length - 2];
+    var last = secuencia[secuencia.length - 1];
 
-    do {
-        var aLast = secuencia[secuencia.length - 2];
-        var last = secuencia[secuencia.length - 1];
-
-        if ((aLast + last) < endNumber)
-            secuencia.push(aLast + last);
-    } while ((aLast + last) < endNumber);
+    if ((aLast + last) < endNumber) {
+        secuencia.push(aLast + last);
+        return calcularFibonacci(secuencia, endNumber)
+    }
 
     return secuencia;
 }
+
+console.log(calcularFibonacci([1, 3], 50));
